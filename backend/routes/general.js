@@ -73,6 +73,13 @@ router.put('/suppliers/:id', async (req, res) => {
 // DASHBOARD STATS
 router.get('/dashboard', async (req, res) => {
   try {
+    // first query gets total medicines
+    // , second gets low stock count,
+    //  third gets expiring soon count, 
+    // fourth gets today's sales and revenue
+    // , fifth gets monthly sales and revenue,
+    //  sixth gets top 5 selling medicines in last 30 days,
+    //  seventh gets 5 most recent sales
     const [
       [totalMeds], [lowStock], [expiringSoon], [todaySales],
       [monthlySales], [topMeds], [recentSales]
